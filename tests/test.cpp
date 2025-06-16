@@ -211,7 +211,7 @@ TEST_CASE("MiddleOutOrder - odd and even") {
     {
         MyContainer<int> c;
         for (int x : {1, 2, 3, 4, 5}) c.add(x);
-        std::vector<int> expected = {3, 4, 2, 5, 1};  // Middle element first
+        std::vector<int> expected = {3, 2, 4, 1, 5};  // Middle element first
         std::vector<int> actual;
         for (auto it : c.middle_out_order()) actual.push_back(it);
         CHECK(actual == expected);
@@ -219,7 +219,7 @@ TEST_CASE("MiddleOutOrder - odd and even") {
     {
         MyContainer<int> c;
         for (int x : {10, 20, 30, 40}) c.add(x);
-        std::vector<int> expected = {30, 40, 20, 10};  // Middle two first
+        std::vector<int> expected = {30, 20, 40, 10};  // Middle two first
         std::vector<int> actual;
         for (auto it : c.middle_out_order()) actual.push_back(it);
         CHECK(actual == expected);
@@ -371,7 +371,7 @@ TEST_CASE("String container - Comprehensive iterator and edge case test") {
     };
 
     std::vector<std::string> expected_middle = {
-        "", "bravo", "echo", "charlie", "delta"
+        "", "echo", "bravo", "delta", "charlie"
     };
 
     // Verify that each iterator produces the expected result

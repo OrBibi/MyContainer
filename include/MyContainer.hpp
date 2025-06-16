@@ -311,10 +311,10 @@ public:
         int left = static_cast<int>(mid) - 1;
         int right = static_cast<int>(mid) + 1;
 
-        // Alternate outward: right, left, right, left...
+        // Alternate outward: left, right, left, right...
         while (left >= 0 || right < static_cast<int>(data.size())) {
-            if (right < static_cast<int>(data.size())) order.push_back(data[right++]);
             if (left >= 0) order.push_back(data[left--]);
+            if (right < static_cast<int>(data.size())) order.push_back(data[right++]);
         }
     }
 

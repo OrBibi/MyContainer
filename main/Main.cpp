@@ -31,20 +31,20 @@ int main() {
     std::cout << "\n";
 
     std::cout << "Reverse Order: ";
-    for (auto x : container.reverse_order()) {
-        std::cout << x << " ";
+    for (auto x = container.reverse_order().begin(); x != container.reverse_order().end(); ++x) {
+        std::cout << *x << " ";
     }
     std::cout << "\n";
 
     std::cout << "Original Order: ";
-    for (auto x : container.order()) {
-        std::cout << x << " ";
+    for (auto x = container.order().begin(); x != container.order().end(); ++x) {
+        std::cout << *x << " ";
     }
     std::cout << "\n";
 
     std::cout << "MiddleOut Order: ";
-    for (auto x : container.middle_out_order()) {
-        std::cout << x << " ";
+    for (auto x = container.middle_out_order().begin(); x != container.middle_out_order().end(); ++x) {
+        std::cout << *x << " ";
     }
     std::cout << "\n";
 
