@@ -8,7 +8,7 @@
 
 namespace myns {
 
-template<typename T>
+template<typename T = int>
 class MyContainer {
 private:
     std::vector<T> data;  // Internal storage for elements
