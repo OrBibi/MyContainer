@@ -15,6 +15,10 @@ private:
 
     // --- STATIC ASSERTS: enforce required traits for T at compile-time ---
 
+    // Needed for using T in std::vector
+    static_assert(!std::is_same<T, bool>::value,
+                 "bool is not supported due to vector<bool> specialization");
+
     // Needed for copying elements (e.g., push_back, sorting)
     static_assert(std::is_copy_constructible<T>::value,
                   "T must be copy constructible");
